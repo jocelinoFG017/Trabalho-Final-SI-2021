@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Photo/configIcon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/Black Range Free.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Photo/KnifeAttack/l0_sprite_1.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.43195
+margin_right = -1.43195
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -5.0
+margin_top = -6.0
+margin_right = 994.0
+margin_bottom = 610.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 381.684
+margin_top = 157.35
+margin_right = 445.684
+margin_bottom = 177.35
+mouse_default_cursor_shape = 2
+text = "START"
+
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 380.014
+margin_top = 234.796
+margin_right = 444.014
+margin_bottom = 254.796
+mouse_default_cursor_shape = 2
+text = "CREDITS"
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 381.684
+margin_top = 317.252
+margin_right = 445.684
+margin_bottom = 337.252
+mouse_default_cursor_shape = 2
+text = "EXIT"
+
+[node name="ConfigButton" type="TextureButton" parent="."]
+margin_left = 731.793
+margin_top = 5.20557
+margin_right = 987.793
+margin_bottom = 261.206
+rect_scale = Vector2( 0.25, 0.25 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 141.385
+margin_top = 315.843
+margin_right = 235.385
+margin_bottom = 329.843
+text = "IMAGEM AQUI"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 630.674
+margin_top = 315.665
+margin_right = 724.674
+margin_bottom = 329.665
+text = "IMAGEM AQUI"
+
+[node name="Titulo" type="Label" parent="."]
+margin_left = 287.818
+margin_top = 33.7714
+margin_right = 557.818
+margin_bottom = 98.7714
+custom_fonts/font = SubResource( 1 )
+text = "Naski
+A lenda do Sul"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 202.5, 241 )
+scale = Vector2( 0.2375, 0.231754 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 656.5, 244 )
+scale = Vector2( 0.2375, 0.231754 )
+texture = ExtResource( 4 )
+flip_h = true
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="ConfigButton" to="." method="_on_ConfigButton_pressed"]

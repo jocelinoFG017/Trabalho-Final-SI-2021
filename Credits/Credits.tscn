@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Credits/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Black Range Free.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Photo/brazilflag.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Photo/flagRS.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Photo/ifflogo.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Photo/github_flag.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_color = Color( 0.0901961, 0.0392157, 0.0392157, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="Credits" type="Control"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 944.0
+margin_bottom = 587.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 2.43198
+margin_top = 4.07126
+margin_right = 147.432
+margin_bottom = 88.0713
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+
+[node name="Titulo" type="Label" parent="."]
+margin_left = 254.199
+margin_top = 22.0
+margin_right = 547.199
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-                NASKI:
+A LENDA DO SUL"
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 669.81, 146.709 )
+scale = Vector2( 1.53699, 1.60411 )
+texture = ExtResource( 3 )
+
+[node name="brazilflag" type="Sprite" parent="."]
+position = Vector2( 45, 450 )
+scale = Vector2( 0.0662795, 0.0567183 )
+texture = ExtResource( 4 )
+
+[node name="flagRS" type="Sprite" parent="."]
+position = Vector2( 130, 450 )
+scale = Vector2( 0.0794868, 0.0683983 )
+texture = ExtResource( 5 )
+
+[node name="ifflogo" type="Sprite" parent="."]
+position = Vector2( 758.632, 450 )
+scale = Vector2( 0.298755, 0.302629 )
+texture = ExtResource( 6 )
+
+[node name="Descricao" type="Label" parent="."]
+margin_left = 609.823
+margin_top = 200.211
+margin_right = 773.823
+margin_bottom = 265.211
+text = "
+CRIADOR POR
+JOCELINO FARIAS GARCIA
+"
+
+[node name="GitButton" type="TextureButton" parent="."]
+margin_left = 619.0
+margin_top = 268.0
+margin_right = 1769.0
+margin_bottom = 733.0
+rect_scale = Vector2( 0.1, 0.1 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 252.0
+margin_top = 99.0
+margin_right = 565.0
+margin_bottom = 499.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 287.0
+margin_bottom = 624.0
+
+[node name="Creditos" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 287.0
+margin_bottom = 624.0
+custom_fonts/font = SubResource( 3 )
+text = "
+DIRETOR DE ARTE
+JOCELINO  FARIAS  GARCIA
+
+ATORES
+JOCELINO  FARIAS  GARCIA
+IVO  MACHADO  GARCIA
+
+PRODUTOR
+JOCELINO  FARIAS  GARCIA
+
+TESTERS
+JOCELINO  FARIAS  GARCIA
+
+ENGINE 
+GODOT  GAME  ENGINE  VERSION 3.1.1
+
+GAME STUDIO
+RED  SALET  STUDIOS
+
+ CONTEUDO MUSICAL
+JOCELINO  FARIAS  GARCIA
+
+MUSICAS
+MAIN  MUSIC  -  jfg
+END  music
+
+AGRADECIMENTOS
+ORIENTADOR(A)
+TESTERS
+COMUNIDADE  GODOT  ENGINE
+
+"
+align = 1
+valign = 1
+uppercase = true
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="GitButton" to="." method="_on_GitButton_pressed"]

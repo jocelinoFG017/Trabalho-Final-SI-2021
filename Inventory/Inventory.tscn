@@ -1,0 +1,38 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_right = 802.0
+margin_bottom = 481.0
+
+[node name="Button" type="Button" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 24.0
+margin_right = -786.0
+margin_bottom = -429.0
+text = "hello1"
+
+[node name="Button2" type="Button" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 24.0
+margin_right = -4.0
+margin_bottom = -4.0
+text = "hello2"
+
+[node name="Button3" type="Button" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 24.0
+margin_right = -4.0
+margin_bottom = -4.0
+text = "hello3"

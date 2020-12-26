@@ -1,0 +1,86 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Player/Idle/player-idle-1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Player/Idle/player-idle-2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player/Idle/player-idle-3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/Idle/player-idle-4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/Run/player-run-1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/Run/player-run-2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player/Run/player-run-3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player/Run/player-run-4.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Player/Run/player-run-5.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Player/Run/player-run-6.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Photo/KnifeAttack/l0_sprite_1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Photo/KnifeAttack/l1_sprite_2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Photo/KnifeAttack/l2_sprite_3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Photo/KnifeAttack/l3_sprite_4.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "KnifeAttack",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "jump_up",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2.56667, 5.33078 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.99946, 25.0421 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 78.9395, 96.8054 )
+scale = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 13
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+run_speed = 150
+jump_speed = -305
+gravity = 750
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "jump_up"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.209811, 2.37158 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+limit_top = 0
+drag_margin_left = 0.1
+drag_margin_right = 0.1
+
+[node name="AttackArea" type="Area2D" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 16.6592, 0.774857 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2( -1.16227, 1.16227 )
+shape = SubResource( 3 )
+disabled = true

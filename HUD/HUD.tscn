@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=1]
+
+[node name="HUD" type="Control"]
+margin_top = -1.29233
+margin_right = 800.0
+margin_bottom = 480.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 266.225
+margin_top = 32.3088
+margin_right = 565.225
+margin_bottom = 152.309
+mouse_default_cursor_shape = 2
+text = "Start"
+
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 263.641
+margin_top = 197.73
+margin_right = 562.641
+margin_bottom = 317.73
+mouse_default_cursor_shape = 2
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 266.225
+margin_top = 341.182
+margin_right = 565.225
+margin_bottom = 461.182
+mouse_default_cursor_shape = 2
+text = "Exit"
+
+[node name="SettingsButton" type="Button" parent="."]
+margin_left = 739.227
+margin_top = 3.87708
+margin_right = 802.227
+margin_bottom = 23.8771
+text = "Settings"
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
