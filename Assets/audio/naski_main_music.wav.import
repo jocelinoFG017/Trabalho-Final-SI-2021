@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/naski_main_music.wav-bce8823057257483b7ec50ece9c69017.sample"
+
+[deps]
+
+source_file="res://Assets/audio/naski_main_music.wav"
+dest_files=[ "res://.import/naski_main_music.wav-bce8823057257483b7ec50ece9c69017.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

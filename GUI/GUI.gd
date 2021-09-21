@@ -13,7 +13,7 @@ func _ready():
 #	pass
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://levels/Level_01.tscn")
+	get_tree().change_scene("res://Assets/videos/VideoPreLevel.tscn")
 
 
 func _on_CreditsButton_pressed():
@@ -26,3 +26,19 @@ func _on_ExitButton_pressed():
 
 func _on_ConfigButton_pressed():
 	get_tree().change_scene("res://Main/Settings.tscn")
+
+
+func _on_HowtoPlayButton_pressed():
+	get_tree().change_scene("res://Main/ComoJogar.tscn")
+
+
+func _on_Area2D_mouse_entered():
+	$StartButton/Area2D/Sprite.show()
+
+
+func _on_CreditsButton_mouse_entered():
+	$CreditsButton/Sprite.show()
+
+
+func _on_CreditsButton_mouse_exited():
+	$CreditsButton/Sprite.hide()

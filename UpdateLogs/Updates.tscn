@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UpdateLogs/Updates.gd" type="Script" id=1]
+
+[node name="Updates" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -78.0
+margin_top = -105.0
+margin_right = 1003.0
+margin_bottom = 563.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 352.16
+margin_top = 217.902
+margin_right = 586.16
+margin_bottom = 334.902
+text = "What's new  in this  version ?
+
+-  Change Language System has been added with success.
+- 
+- 
+- 
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 787.655
+margin_top = 135.41
+margin_right = 918.655
+margin_bottom = 253.41
+text = "Version: 0.2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "btn_back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

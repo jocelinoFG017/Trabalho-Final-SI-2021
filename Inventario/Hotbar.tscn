@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Inventory/hotbar_background.png" type="Texture" id=1]
+
+[node name="Hotbar" type="Control"]
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 36.5102
+margin_top = 26.1921
+margin_right = 198.51
+margin_bottom = 66.1921
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
