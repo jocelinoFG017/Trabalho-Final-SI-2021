@@ -13,7 +13,7 @@ func _ready():
 #	pass
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Assets/videos/VideoPreLevel.tscn")
+	get_tree().change_scene("res://Transitions/All/Transition01.tscn")
 
 
 func _on_CreditsButton_pressed():
@@ -37,8 +37,10 @@ func _on_Area2D_mouse_entered():
 
 
 func _on_CreditsButton_mouse_entered():
-	$CreditsButton/Sprite.show()
+	#$CreditsButton/Sprite.show()
+	pass
 
 
 func _on_CreditsButton_mouse_exited():
-	$CreditsButton/Sprite.hide()
+	#$CreditsButton/Sprite.hide()
+	pass

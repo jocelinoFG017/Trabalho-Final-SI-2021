@@ -1,8 +1,23 @@
 extends Control
 
+enum{EN, PTBR, JA}
+var idioma
+
+signal idioma_atual(language)
+
 func _ready():
+	#localiza(PTBR)
 	pass
 
+func localiza(new_idioma):
+	var idioma_atual = new_idioma
+	match idioma_atual:
+		EN:
+			TranslationServer.set_locale("en")
+		PTBR:
+			TranslationServer.set_locale("pt_BR")
+		JA:
+			TranslationServer.set_locale("ja")
 
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://Main/Main.tscn")
@@ -17,8 +32,12 @@ func _on_UpdateLog_pressed():
 
 
 func _on_LanguageButton_pressed():
-	TranslationServer.set_locale("pt_BR")
+	localiza(PTBR)
 
 
 func _on_LanguageButton2_pressed():
-	TranslationServer.set_locale("en")
+	localiza(EN)
+
+
+func _on_Button_pressed():
+	localiza(JA)

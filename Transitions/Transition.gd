@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready():
+	#if localiza(idioma) == "pt_BR":
 	pass
 
 

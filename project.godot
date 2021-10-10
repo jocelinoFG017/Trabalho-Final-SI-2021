@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Naski1.3"
-run/main_scene="res://levels/Level_01.tscn"
+run/main_scene="res://PreGame/PreGame.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -108,6 +108,11 @@ Disparo={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":76,"unicode":0,"echo":false,"script":null)
  ]
 }
+use={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -116,10 +121,14 @@ Disparo={
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="collectibles"
 2d_physics/layer_5="shootable"
+2d_physics/layer_6="next_level"
+2d_physics/layer_7="placa"
+2d_physics/layer_8="items"
 
 [locale]
 
-translations=PoolStringArray( "res://Assets/Localization_Data/Locales_Naski - Página1.en.translation", "res://Assets/Localization_Data/Locales_Naski - Página1.pt_BR.translation" )
+translations=PoolStringArray( "res://Assets/Localization_Data/Locales_Naski.en.translation", "res://Assets/Localization_Data/Locales_Naski.ja.translation", "res://Assets/Localization_Data/Locales_Naski.pt_BR.translation" )
+locale_filter=[ 0, [ "en", "pt_BR" ] ]
 
 [rendering]
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/diversos/panel/panel.png" type="Texture" id=1]
+
+[node name="panel" type="Sprite"]
+show_behind_parent = true
+position = Vector2( 441.886, 235.197 )
+scale = Vector2( 2.8, 2.7 )
+texture = ExtResource( 1 )

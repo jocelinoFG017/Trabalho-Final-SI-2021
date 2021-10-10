@@ -9,7 +9,7 @@ export(int) var run_speed  # velocidade de movimento  = 150
 export(int) var jump_speed # velocidade de pulo = -305
 export(int) var gravity # gravidade = 750
 
-enum {IDLE, RUN, JUMP, HURT, DEAD, SITDOWN, ATTACK, BOWRUN}
+enum {IDLE, RUN, JUMP, HURT, DEAD, SITDOWN, ATTACK}
 #var isAttacking = false # melee attack 
 
 #  Menu de armas
@@ -33,10 +33,10 @@ var flechada = 1
 
 signal hpChanged(amout)
 signal dead
+signal entra_em_uma_casa
 
 func _ready():
 	change_state(IDLE)
-	escolhe_arma(PUNCH)
 
 
 func start(pos):
@@ -45,7 +45,6 @@ func start(pos):
 	position = pos
 	show()
 	change_state(IDLE)
-	escolhe_arma(PUNCH)
 
 func escolhe_arma(arma_atual):
 	arma = arma_atual
@@ -60,35 +59,13 @@ func change_state(new_state):
 	state = new_state
 	match state:
 		IDLE:
-			if weapon == PUNCH:
-				new_anim = 'idle' # Serve como o PunchIdle
-			if weapon == BOW:
-				new_anim = 'BowIdle'
+			new_anim = 'idle'
 		RUN: 
-			new_anim = 'run'  # Serve como o PunchRun
-		BOWRUN:
-			new_anim = 'BowRun'
+			new_anim = 'run'
 		JUMP:
-			
 			new_anim = 'jump_up'
-		#BOWRUN:
-		#	new_anim = 'BowRun'
-			
 		ATTACK:
-			if weapon == PUNCH:
-				return
-			
-			if weapon == KNIFE:
-				return
-			
-			if weapon == ROCK:
-				return
-			
-			if weapon == BOW:
-				new_anim = 'BowAttack'
-			
-			if weapon == SPEAR:
-				return
+			new_anim = 'BowAttack'
 		HURT:
 			# new_anim = 'hurt'
 			
@@ -118,14 +95,7 @@ func get_input():
 	var jump = Input.is_action_just_pressed("jump")
 	var down = Input.is_action_just_pressed("sitDown")
 	var disparo_pedra = Input.is_action_just_pressed("Disparo_Pedra")
-	var disparo_flecha = Input.is_action_just_pressed("disparo_flecha")
-	
-	#  Teclas de Seleção de arma
-	var weapon_one = Input.is_action_just_pressed("WeaponOne")     #  punch 
-	var weapon_two = Input.is_action_just_pressed("WeaponTwo")     #  knife
-	var weapon_three = Input.is_action_just_pressed("WeaponThree") #  rock
-	var weapon_four = Input.is_action_just_pressed("WeaponFour")   #  bow
-	var weapon_five = Input.is_action_just_pressed("WeaponFive")   #  spear
+	var disparo_flecha = Input.is_action_just_pressed("Disparo")
 	
 	
 	velocity.x = 0
@@ -159,18 +129,7 @@ func get_input():
 		change_state(IDLE)
 	if state == JUMP and velocity.y > 0:
 		new_anim = 'jump_down'
-	
-	if weapon_four:
-		escolhe_arma(BOW)
 		
-		if weapon_one:
-			escolhe_arma(PUNCH)
-
-	if arma == BOW:
-		print("trocou pro arco")
-		if state == BOW and velocity.x != 0:
-			change_state(BOWRUN)  #  punchrun
-	
 	#  aqui que to atirando a pedra
 	if disparo_pedra:
 		new_anim = 'BowAttack'
@@ -182,17 +141,8 @@ func get_input():
 			if $AnimatedSprite.flip_h == false:
 				pedra.dir = Vector2(1,0)
 			get_parent().add_child(pedra)
-	
-	
-	#  Seleção de arma
-	
-	#  selecionar o ARCO
-	#if weapon_four:
-	#	change_gun(BOW)
-	#if weapon == PUNCH and weapon_four:
-#		change_gun(BOW)
-	
-	if weapon == BOW and disparo_flecha:
+			
+	if disparo_flecha:
 		new_anim = 'BowAttack'
 		if get_tree().get_nodes_in_group("Atiraveis").size() < 3:
 			var flecha = pre_flecha.instance()
@@ -231,7 +181,3 @@ func hurt():
 	#if $AnimatedSprite.animation == "KnifeAttack":
 		#$AttackArea/CollisionShape2D.disabled = true
 		#isAttacking = false
-
-
-
-

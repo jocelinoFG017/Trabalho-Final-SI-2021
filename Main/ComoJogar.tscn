@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/bebas_neue/BebasNeue-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Main/ComoJogar.gd" type="Script" id=2]
+[ext_resource path="res://Assets/diversos/panel/panel2.png" type="Texture" id=3]
+[ext_resource path="res://scenesRandom/panel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenesRandom/backgroundButton.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -15,19 +18,14 @@ font_data = ExtResource( 1 )
 [node name="ComoJogar" type="Node"]
 script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="."]
-margin_left = -27.0
-margin_right = 991.0
-margin_bottom = 527.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="panel" parent="." instance=ExtResource( 4 )]
+texture = ExtResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 117.0
-margin_top = 96.0
+margin_top = 95.0561
 margin_right = 319.0
-margin_bottom = 257.0
+margin_bottom = 256.056
 custom_fonts/normal_font = SubResource( 1 )
 text = "MOVIMENTOS DO PERSONAGEM
 A-> DIREITA
@@ -63,18 +61,25 @@ text = "ARMAS
 1 - > FACA
 2 - >LANÇA
 3 - >ARCO
-4 - >PEDRA
-5 - >TRABUCO DE DARDO"
+4 - >PEDRA"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-margin_right = 93.0
-margin_bottom = 48.0
+margin_left = 64.1447
+margin_top = 40.9813
+margin_right = 157.145
+margin_bottom = 88.9813
 mouse_default_cursor_shape = 2
-text = "Voltar"
+custom_colors/font_color_hover = Color( 0.866667, 0.109804, 0.109804, 1 )
+custom_colors/font_color_pressed = Color( 0.109804, 0.796078, 0.266667, 1 )
+text = "btn_back"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" parent="Button" instance=ExtResource( 5 )]
+position = Vector2( 47.1362, 23.8281 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

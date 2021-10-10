@@ -39,12 +39,23 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 880, 368 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 15, 163 )
-texture = ExtResource( 7 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 880, 368 )
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 880, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 880, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
 
 [node name="World" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )

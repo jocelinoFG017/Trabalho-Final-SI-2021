@@ -1,16 +1,10 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Photo/idle/idle6.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Photo/idle/idle1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Photo/idle/idle5.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Photo/idle/idle4.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Photo/idle/run1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Photo/idle/run4.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Photo/idle/run2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Photo/idle/run5.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Photo/idle/run3.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Photo/idle/run7.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Photo/KnifeAttack/l0_sprite_1.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Photo/KnifeAttack/l1_sprite_2.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Photo/KnifeAttack/l2_sprite_3.png" type="Texture" id=14]
@@ -19,7 +13,6 @@
 [ext_resource path="res://Assets/audio/hurt1.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Assets/Photo/idle/idle2.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Photo/idle/idle3.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Photo/idle/run6.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Photo/nASKI/Agachar/sitDown4.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Photo/nASKI/Agachar/sitDown3.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Photo/nASKI/Agachar/sitDown2.png" type="Texture" id=23]
@@ -46,35 +39,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 20 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "run",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 28 ) ],
-"loop": false,
-"name": "BowAttack",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": false,
 "name": "SitDown",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "jump_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "jump_down",
-"speed": 5.0
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "KnifeAttack",
+"speed": 25.0
 }, {
 "frames": [ ExtResource( 36 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ) ],
 "loop": true,
@@ -86,10 +59,30 @@ animations = [ {
 "name": "BowIdle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 36 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 28 ) ],
 "loop": false,
-"name": "KnifeAttack",
-"speed": 25.0
+"name": "BowAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "jump_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "jump_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -98,11 +91,13 @@ extents = Vector2( 2.67496, 6.37937 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.99946, 25.0421 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 position = Vector2( 78.3449, 97.0254 )
 scale = Vector2( 2, 2 )
 collision_layer = 2
-collision_mask = 29
+collision_mask = 189
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -120,6 +115,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="Hotbar" parent="." instance=ExtResource( 31 )]
+visible = false
 margin_left = -59.8463
 margin_top = -54.4916
 margin_right = -59.8463
@@ -136,10 +132,11 @@ position = Vector2( -0.615237, 2.88476 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1.11362, -10.6868 )
+position = Vector2( 1.1, -10 )
 current = true
 zoom = Vector2( 0.28, 0.28 )
 limit_top = 0
+limit_bottom = 10000
 drag_margin_left = 0.1
 drag_margin_right = 0.1
 
