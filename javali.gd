@@ -1,18 +1,21 @@
 extends KinematicBody2D
 
+# Variaveis externas
 export (int) var speed
 export (int) var gravity
 
-#  estados do inimigo
+# Estados do inimigo
 enum{WALK, HURT, DEAD}
 
 var facing = 1
-#  estado
+
+# Estado
 var state
 var anim
 var new_anim
 var velocity = Vector2()
-#  quantidade de vidas
+
+# Quantidade de vidas
 var enemy_life = 3
 
 

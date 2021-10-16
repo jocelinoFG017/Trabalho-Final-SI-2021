@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://items/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/npc/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/NextLevel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Collectibles/Papirinho.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Background/BackgroundLV1.png" type="Texture" id=6]
@@ -13,6 +14,7 @@
 [ext_resource path="res://Assets/items/placa_model2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/items/placa_m2_use.png" type="Texture" id=13]
 [ext_resource path="res://items/gate.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Dialogos/DialoguePlayer.tscn" type="PackedScene" id=15]
 
 [node name="Level_01" instance=ExtResource( 1 )]
 
@@ -57,7 +59,15 @@ tile_data = PoolIntArray( 524285, 5, 0, 524287, 5, 0, 458753, 5, 0 )
 [node name="Pickups" parent="." index="3"]
 tile_data = PoolIntArray( 393232, 4, 0, 393243, 4, 0, 393271, 4, 0, 393283, 4, 0, 393291, 4, 0, 393299, 4, 0, 524282, 6, 0, 458760, 6, 0, 458765, 6, 0, 458773, 6, 0, 458777, 6, 0, 458812, 6, 0 )
 
-[node name="placa" parent="." index="5" instance=ExtResource( 10 )]
+[node name="NPC" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 300.138, 94.7868 )
+
+[node name="CanvasLayer" parent="NPC" index="2" instance=ExtResource( 15 )]
+offset = Vector2( 180, 370 )
+scale = Vector2( 1.5, 1.5 )
+transform = Transform2D( 1.5, 0, 0, 1.5, 180, 370 )
+
+[node name="placa" parent="." index="6" instance=ExtResource( 10 )]
 position = Vector2( 461.505, 111.927 )
 
 [node name="Label" type="Label" parent="placa" index="3"]
@@ -73,7 +83,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="placa2" parent="." index="6" instance=ExtResource( 10 )]
+[node name="placa2" parent="." index="7" instance=ExtResource( 10 )]
 position = Vector2( 1227.49, 112.499 )
 
 [node name="Label" type="Label" parent="placa2" index="3"]
@@ -88,26 +98,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="gate" parent="." index="7" instance=ExtResource( 14 )]
+[node name="gate" parent="." index="8" instance=ExtResource( 14 )]
 visible = false
 position = Vector2( 725.312, 95.7862 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Papirinho" parent="." index="8" instance=ExtResource( 5 )]
+[node name="Papirinho" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( -141.203, 112.565 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2( 958.105, 334.572 )
 
-[node name="NextLevel" parent="." index="10" instance=ExtResource( 4 )]
+[node name="NextLevel" parent="." index="11" instance=ExtResource( 4 )]
 position = Vector2( 1277.94, 112.078 )
 cenas = "res://levels/Level_01-Aldeia.tscn"
 
-[node name="PlayerSpawn" parent="." index="11"]
+[node name="PlayerSpawn" parent="." index="12"]
 position = Vector2( 145.363, 109.666 )
 
-[node name="placas" type="Node" parent="." index="12"]
+[node name="placas" type="Node" parent="." index="13"]
 
 [node name="Sprite" type="Sprite" parent="placas" index="0"]
 position = Vector2( 105.147, 142.5 )
@@ -124,10 +134,10 @@ position = Vector2( 448.117, 146.01 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
 
-[node name="Wall" parent="." index="13" instance=ExtResource( 2 )]
+[node name="Wall" parent="." index="14" instance=ExtResource( 2 )]
 position = Vector2( 1373.06, 63.5678 )
 
-[node name="Wall2" parent="." index="14" instance=ExtResource( 2 )]
+[node name="Wall2" parent="." index="15" instance=ExtResource( 2 )]
 position = Vector2( -198.073, 110.757 )
 [connection signal="placa_ativada" from="placa" to="." method="_on_placa_placa_ativada"]
 [connection signal="placa_ativada" from="placa2" to="." method="_on_placa_placa_ativada"]

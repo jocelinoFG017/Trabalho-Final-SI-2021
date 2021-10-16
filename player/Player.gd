@@ -82,7 +82,7 @@ func change_state(new_state):
 			new_anim = 'SitDown'
 		DEAD:
 			emit_signal("dead")
-			hide()
+			queue_free()
 
 
 

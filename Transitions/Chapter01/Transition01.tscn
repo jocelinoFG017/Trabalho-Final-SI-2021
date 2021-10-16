@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Transitions/Transition.gd" type="Script" id=1]
+
+[node name="Transition01" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 68.0
+margin_top = 139.0
+margin_right = 752.0
+margin_bottom = 419.0
+text = "txt_transition1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 284.0
+margin_top = 62.0
+margin_right = 376.0
+margin_bottom = 116.0
+text = "txt_transition1"
+__meta__ = {
+"_edit_use_anchors_": false
+}

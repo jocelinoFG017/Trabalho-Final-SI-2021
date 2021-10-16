@@ -7,7 +7,7 @@ var velocity = Vector2()
 var facing = 1
 
 func _physics_process(delta):
-	$Sprite.flip_h = velocity.x > 0
+	$AnimatedSprite.flip_h = velocity.x > 0
 	velocity.y += gravity * delta
 	velocity.x = facing * speed
 

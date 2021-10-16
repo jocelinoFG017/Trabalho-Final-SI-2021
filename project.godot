@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Naski1.3"
-run/main_scene="res://PreGame/PreGame.tscn"
+run/main_scene="res://Scenes/PreGame/PreGame.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -124,10 +124,11 @@ use={
 2d_physics/layer_6="next_level"
 2d_physics/layer_7="placa"
 2d_physics/layer_8="items"
+2d_physics/layer_9="npc"
 
 [locale]
 
-translations=PoolStringArray( "res://Assets/Localization_Data/Locales_Naski.en.translation", "res://Assets/Localization_Data/Locales_Naski.ja.translation", "res://Assets/Localization_Data/Locales_Naski.pt_BR.translation" )
+translations=PoolStringArray( "res://Assets/Localization_Data/Locales_Naski.pt_BR.translation", "res://Assets/Localization_Data/Locales_Naski.ja.translation", "res://Assets/Localization_Data/Locales_Naski.en.translation" )
 locale_filter=[ 0, [ "en", "pt_BR" ] ]
 
 [rendering]

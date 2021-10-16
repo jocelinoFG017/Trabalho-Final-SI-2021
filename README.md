@@ -6,7 +6,7 @@ This is a Pixel art game multiplatform 2D.
 - Jump, run, play and much more.
 
 ## Screenshots
-<img src="files/Screenshot01.png" width="400" height="250">
+<img src="files/Screenshot01.png" width="400" height="250"> <img src="files/Screenshot02.png" width="400" height="250">
 
 
 ## Details 
@@ -20,9 +20,9 @@ Relatory: [Read this file](https://github.com)
 Engine: Godot Engine 3.+ win x64
 
 ## Last Update
-Latest version: 0.03
+Latest version: 0.04
 
 More details: [Read this file](https://github.com/jocelinoFG017/Trabalho-Final-SI-2021/blob/master/UpdateLogs/LastUpdate.md)
 
 ## Before Last Update
-last version: 0.02
+last version: 0.03

@@ -4,8 +4,8 @@
 [ext_resource path="res://items/NextLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://items/Wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/diversos/background/toca_javaliBoss.png" type="Texture" id=4]
+[ext_resource path="res://enemies/BOSS/JavaliBoss.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Background/MiddleGround.png" type="Texture" id=6]
-[ext_resource path="res://javali.tscn" type="PackedScene" id=7]
 
 [node name="Level02" instance=ExtResource( 1 )]
 
@@ -43,6 +43,6 @@ position = Vector2( 1351.25, 270.748 )
 [node name="PlayerSpawn" parent="." index="9"]
 position = Vector2( 21.8762, 253.169 )
 
-[node name="Javali" parent="." index="10" instance=ExtResource( 7 )]
-position = Vector2( 536.515, 294.866 )
-scale = Vector2( 2.5, 2.5 )
+[node name="JavaliBoss" parent="." index="10" instance=ExtResource( 5 )]
+position = Vector2( 580.551, 319.646 )
+scale = Vector2( 0.6, 0.6 )

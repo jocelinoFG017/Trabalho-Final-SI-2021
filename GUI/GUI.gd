@@ -1,23 +1,17 @@
 extends Control
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _on_StartButton_pressed():
+	#get_tree().change_scene("res://Transitions/All/Transition01.tscn")
 	get_tree().change_scene("res://Transitions/All/Transition01.tscn")
+	#get_tree().change_scene("res://levels/Level_01.tscn")
 
 
 func _on_CreditsButton_pressed():
-	get_tree().change_scene("res://Credits/Credits.tscn")
+	get_tree().change_scene("res://Scenes/Main/Credits/Credits.tscn")
 
 
 func _on_ExitButton_pressed():
@@ -25,11 +19,11 @@ func _on_ExitButton_pressed():
 
 
 func _on_ConfigButton_pressed():
-	get_tree().change_scene("res://Main/Settings.tscn")
+	get_tree().change_scene("res://Settings.tscn")
 
 
 func _on_HowtoPlayButton_pressed():
-	get_tree().change_scene("res://Main/ComoJogar.tscn")
+	get_tree().change_scene("res://Scenes/Main/ComoJogar/ComoJogar.tscn")
 
 
 func _on_Area2D_mouse_entered():

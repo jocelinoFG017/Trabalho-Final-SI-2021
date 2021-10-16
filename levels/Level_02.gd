@@ -24,8 +24,6 @@ func _on_Player_dead():
 #	pass
 
 
-
-
 func _on_placa_placa_ativada(current_status)-> void:
 	print("sinal funcionando")
 	plaquinha.show()

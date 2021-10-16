@@ -2,10 +2,9 @@ extends Control
 
 
 func _ready():
-	#if localiza(idioma) == "pt_BR":
+	#TranslationServer.set_locale("en")
 	pass
 
 
-
-func _on_Timer_timeout():
+func _on_Button_pressed():
 	get_tree().change_scene("res://levels/Level_01.tscn")

@@ -1,0 +1,69 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Assets/LOGO/botao/iffar1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/LOGO/botao/iffar2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/LOGO/botao/iffar10.png" type="Texture" id=3]
+[ext_resource path="res://Assets/LOGO/botao/white.png" type="Texture" id=4]
+[ext_resource path="res://Assets/LOGO/botao/iffar13.png" type="Texture" id=5]
+[ext_resource path="res://Assets/LOGO/botao/iffar18.png" type="Texture" id=6]
+[ext_resource path="res://Assets/LOGO/botao/iffar20.png" type="Texture" id=7]
+[ext_resource path="res://Assets/LOGO/botao/iffar8.png" type="Texture" id=8]
+[ext_resource path="res://Assets/LOGO/botao/iffar4.png" type="Texture" id=9]
+[ext_resource path="res://Assets/LOGO/botao/iffar14.png" type="Texture" id=10]
+[ext_resource path="res://Assets/LOGO/botao/iffar11.png" type="Texture" id=11]
+[ext_resource path="res://Assets/LOGO/botao/iffar19.png" type="Texture" id=12]
+[ext_resource path="res://Assets/LOGO/botao/iffar16.png" type="Texture" id=13]
+[ext_resource path="res://Assets/LOGO/botao/iffar22.png" type="Texture" id=14]
+[ext_resource path="res://Assets/LOGO/botao/iffar6.png" type="Texture" id=15]
+[ext_resource path="res://Assets/LOGO/botao/iffar21.png" type="Texture" id=16]
+[ext_resource path="res://Assets/LOGO/botao/iffar12.png" type="Texture" id=17]
+[ext_resource path="res://Assets/LOGO/botao/iffar5.png" type="Texture" id=18]
+[ext_resource path="res://Assets/LOGO/botao/iffar15.png" type="Texture" id=19]
+[ext_resource path="res://Assets/LOGO/botao/iffar7.png" type="Texture" id=20]
+[ext_resource path="res://Assets/LOGO/botao/iffar9.png" type="Texture" id=21]
+[ext_resource path="res://Assets/LOGO/botao/iffar17.png" type="Texture" id=22]
+[ext_resource path="res://Assets/LOGO/botao/iffar3.png" type="Texture" id=23]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+# Chamado quando o node entra na cena(scene tree).
+# pela primeira vez.
+func _ready():
+	$p1.play()
+
+# Quando acabar a animação chama a próxima cena
+# declarada abaixo.
+func _on_p1_animation_finished():
+	get_tree().change_scene(\"res://Scenes/Main/Main.tscn\")
+"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 23 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 21 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 22 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "Intro",
+"speed": 10.0
+} ]
+
+[node name="PreGame" type="Node"]
+script = SubResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -345.408 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 479.997, 266.384 )
+scale = Vector2( 15.9999, 11.0522 )
+texture = ExtResource( 4 )
+
+[node name="p1" type="AnimatedSprite" parent="."]
+position = Vector2( 400, 240 )
+scale = Vector2( 8, 8 )
+frames = SubResource( 2 )
+animation = "Intro"
+speed_scale = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="animation_finished" from="p1" to="." method="_on_p1_animation_finished"]
