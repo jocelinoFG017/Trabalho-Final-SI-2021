@@ -1,26 +1,28 @@
-## Update 04
+## Update 05
 
 Game: Naski
 
-Version: 0.4
+Version: 0.5
 ### <b><i>1. What's new ?</i></b>
-- New language added: Japanese.
-- Main music added.
-- Dialogue system it's working.
+- New buttons to interact.
+- New tematic main background.
+- New bakcground music
+- </somethinHERE/>
 
 
 ### <b><i>2. Details</i></b>
  
- - Some unnecessary and redundant files removed.
+ - Some unnecessary and redundant files removed II.
+ - Javali dead animation it was colored.
+ - Translations in menu are completed.
+ - Font: Montral Regular in use now.
+ - Music: East to the east rocks is on.
+ - Music Control config added.
+ - Player support have a link now.
+ - 
+
  
- - BOSS Javali: New colored Sprites added.
- 
- - Common Enemy: Javali->Colored Sprites added(Walk Animation)
- 
- - Oca Design changed(Sprite color).
- - Oca now have an animation.
- 
- - Some bug fixed.
+ - Some much bug fixed.
 
 ### <b><i>3. Bugs:</b> Related and Solved</i>
 
@@ -28,17 +30,14 @@ Version: 0.4
 
         - Need a backButton in game 
         - Need a pause button in game 
-        - GUI needs visual upgrade 
         - Complex Finite State Machine (FSM) added, but not functional (incomplete).
         - Cutscene(VideoPreLevel) temporarily removed
         - inventory system added, but not functional
         - Dialogue System translation necessary.
+        - Translation in transition 2,3,4,5 necessary.
+        - Button More About does not work.
+        - Need translation to boards and letters.
 
 - Solved/Fixed/Working Now
   
-        - The first and second levels need a visual upgrades.
-        - Player sprite movement is a bit slow
-        - HUD have same buttons of GUI(need change this).
-        - Background color of some levels is with the wrong color.
-        - Transition Scene idiom not working. 
-        - Dialogue System is not functional.
+        - GUI needs visual upgrade

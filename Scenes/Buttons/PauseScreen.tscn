@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Buttons/PauseScreen.gd" type="Script" id=1]
+
+[node name="PauseScreen" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueButton" type="Button" parent="."]
+visible = false
+margin_left = 268.881
+margin_top = 200.363
+margin_right = 498.881
+margin_bottom = 254.363
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}

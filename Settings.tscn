@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenesRandom/panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenesRandom/backgroundButton.tscn" type="PackedScene" id=2]
@@ -7,6 +7,22 @@
 [ext_resource path="res://Assets/Photo/flag_US.jpg" type="Texture" id=5]
 [ext_resource path="res://Assets/Photo/brazilflag.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Photo/japanFlag.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 8 )
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0
@@ -18,8 +34,72 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -123.801
+margin_top = 5.17157
+margin_right = 141.199
+margin_bottom = 5.17157
+rect_min_size = Vector2( 100, 100 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+margin_right = 264.0
+margin_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+margin_right = 132.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_right = 132.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 1 )
+text = "music_tr"
+
+[node name="Label2" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 25.0
+margin_right = 132.0
+margin_bottom = 39.0
+text = "                                 "
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+margin_left = 136.0
+margin_right = 264.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HSlider" type="HSlider" parent="ScrollContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 128.0
+margin_bottom = 16.0
+min_value = -80.0
+max_value = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 20.0
+margin_right = 128.0
+margin_bottom = 40.0
+text = "                             "
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="panel" parent="." instance=ExtResource( 1 )]
-position = Vector2( 440.257, 236.695 )
+position = Vector2( 443.085, 238.109 )
 
 [node name="BackButton" type="Button" parent="."]
 margin_left = 48.0
@@ -27,6 +107,7 @@ margin_top = 48.0
 margin_right = 128.0
 margin_bottom = 80.0
 mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_hover = Color( 0.929412, 0.054902, 0.054902, 1 )
 custom_colors/font_color_pressed = Color( 0.243137, 0.964706, 0.0156863, 1 )
 text = "btn_back"
@@ -41,43 +122,23 @@ position = Vector2( 39.3416, 16.92 )
 scale = Vector2( 1.20887, 1.87307 )
 texture = ExtResource( 4 )
 
-[node name="SupportButton" type="Button" parent="."]
-margin_left = 320.0
-margin_top = 144.0
-margin_right = 480.0
-margin_bottom = 180.0
-text = "btn_support"
-flat = true
+[node name="Label2" type="Label" parent="."]
+margin_left = 329.247
+margin_top = 324.162
+margin_right = 489.247
+margin_bottom = 338.162
+custom_fonts/font = SubResource( 3 )
+text = "btn_language"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="SupportButton"]
-show_behind_parent = true
-position = Vector2( 75.8108, 18.8108 )
-scale = Vector2( 1.7, 2.4 )
-texture = ExtResource( 4 )
-
-[node name="FeedbackButton" type="Button" parent="."]
-margin_left = 320.0
-margin_top = 240.0
-margin_right = 480.0
-margin_bottom = 276.0
-mouse_default_cursor_shape = 2
-text = "btn_feedback"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" parent="FeedbackButton" instance=ExtResource( 2 )]
-position = Vector2( 80.2293, 17.9336 )
 
 [node name="LanguageButton" type="TextureButton" parent="."]
-margin_left = 280.0
-margin_top = 368.0
-margin_right = 344.0
-margin_bottom = 416.0
+margin_left = 457.0
+margin_top = 370.0
+margin_right = 543.0
+margin_bottom = 426.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 6 )
 expand = true
@@ -87,10 +148,10 @@ __meta__ = {
 }
 
 [node name="LanguageButton2" type="TextureButton" parent="."]
-margin_left = 360.0
-margin_top = 368.0
-margin_right = 424.0
-margin_bottom = 416.0
+margin_left = 362.279
+margin_top = 370.0
+margin_right = 448.279
+margin_bottom = 426.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
 expand = true
@@ -100,10 +161,10 @@ __meta__ = {
 }
 
 [node name="LanguageButtonJA" type="TextureButton" parent="."]
-margin_left = 440.0
-margin_top = 368.0
-margin_right = 504.0
-margin_bottom = 416.0
+margin_left = 259.042
+margin_top = 370.0
+margin_right = 345.042
+margin_bottom = 426.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
 expand = true
@@ -113,6 +174,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 352.0
 margin_top = 48.0
 margin_right = 448.0
@@ -124,18 +186,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 320.0
-margin_top = 336.0
-margin_right = 480.0
-margin_bottom = 350.0
-text = "btn_language"
-align = 1
+[node name="SupportButton" type="Button" parent="."]
+margin_left = 283.106
+margin_top = 119.768
+margin_right = 531.106
+margin_bottom = 139.768
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.85098, 0.00392157, 0.00392157, 1 )
+custom_colors/font_color_pressed = Color( 0.235294, 0.858824, 0.145098, 1 )
+text = "btn_support"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="SupportButton"]
+show_behind_parent = true
+position = Vector2( 120.308, 15 )
+scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 4 )
+
+[node name="FeedbackButton" type="Button" parent="."]
+margin_left = 277.134
+margin_top = 215.36
+margin_right = 525.134
+margin_bottom = 235.36
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.854902, 0.0235294, 0.0235294, 1 )
+custom_colors/font_color_pressed = Color( 0.0627451, 0.827451, 0.14902, 1 )
+text = "btn_feedback"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" parent="FeedbackButton" instance=ExtResource( 2 )]
+position = Vector2( 127.562, 14.1539 )
+scale = Vector2( 2.4, 2.4 )
+[connection signal="value_changed" from="ScrollContainer/HBoxContainer/VBoxContainer2/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="pressed" from="FeedbackButton" to="." method="_on_FeedbackButton_pressed"]
 [connection signal="pressed" from="LanguageButton" to="." method="_on_LanguageButton_pressed"]
 [connection signal="pressed" from="LanguageButton2" to="." method="_on_LanguageButton2_pressed"]
 [connection signal="pressed" from="LanguageButtonJA" to="." method="_on_LanguageButtonJA_pressed"]
+[connection signal="pressed" from="SupportButton" to="." method="_on_SupportButton_pressed"]
+[connection signal="pressed" from="FeedbackButton" to="." method="_on_FeedbackButton_pressed"]

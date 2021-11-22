@@ -17,7 +17,7 @@ func play():
 		return
 	print("passou do if")
 	dialogues = load_dialogue()
-	turn_off_the_player()
+	#turn_off_the_player()
 	is_dialogue_active = true
 	print("chegou aqui")
 	
@@ -39,10 +39,10 @@ func next_line():
 	if current_dialogue_id >= len(dialogues):
 		#$Timer.start()
 		$NinePatchRect.visible = false
-		turn_on_the_player()
+		#turn_on_the_player()
 		return
 	
-	$NinePatchRect/Name.text = dialogues[current_dialogue_id]["name"]	
+	$NinePatchRect/Name.text = dialogues[current_dialogue_id]["name"]
 	$NinePatchRect/Message.text = dialogues[current_dialogue_id]["text"]
 	
 func load_dialogue():
@@ -54,8 +54,8 @@ func load_dialogue():
 func _on_Timer_timeout():
 	is_dialogue_active = false
 	
-func turn_on_the_player():
-	var player = get_tree().get_root().find_node("Player", true, false)
+#func turn_on_the_player():
+#	var player = get_tree().get_root().find_node("Player", true, false)
 
-func turn_off_the_player():
-	var player = get_tree().get_root().find_node("Player", true, false)
+#func turn_off_the_player():
+#	var player = get_tree().get_root().find_node("Player", true, false)

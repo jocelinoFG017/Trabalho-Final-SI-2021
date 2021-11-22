@@ -2,7 +2,7 @@
 btn_play,Play,Jogar,Ensō suru
 btn_credit,Credits,Créditos,Kurejitto
 btn_how,How to Play,Como Jogar,Asobikata
-btn_exit,Exit,Sair,Gaishutsu suru ni wa
+btn_exit,Exit,Sair,Deteike
 btn_back,Back,Voltar,Modotte
 btn_support,Player Support,Suporte ao Jogador,Pureiyāsapōto
 btn_feedback,FeedBack,FeedBack,Fīdobakku
@@ -20,8 +20,162 @@ caçam o suficiente para sobreviver e tentam manter a harmonia com os seus
 deuses, situada no estado do Rio Grande do Sul. Esta pequena aldeia está
 situada à margem do Rio De La Plata, tendo como principal atividade a pesca por
 estar localizada em margens ribeirinhas, sendo uma das aldeias que fazem parte
-da tribo Guarani, mesmo estando distante de suas aldeias principais.","Kono monogatari wa, riogurandedosuru-shū ni aru, tochi o tagayashi, ikinokori, kamigami to no chōwa o iji shiyou to suru jiyūna indohito no chīsana mura kara hajimarimasu. Kono chīsana mura wa, riode no hotori ni arimasu. Rapurata wa, kawagishi ni ichi shite iru tame, omona katsudō wa tsurideari, shuyōna mura kara tōkuhanarete imasuga, guarani-zoku no ichibudearu mura no 1tsudesu."
+da tribo Guarani, mesmo estando distante de suas aldeias principais.","Kono monogatari wa, riogurandedosuru-shū ni aru, tochi o tagayashi, ikinokori,
+ kamigami to no chōwa o iji shiyou to suru jiyūna indohito no chīsana mura
+ kara hajimarimasu. Kono chīsana mura wa, riode no hotori ni arimasu. 
+Rapurata wa, kawagishi ni ichi shite iru tame, omona katsudō wa tsurideari,
+ shuyōna mura kara tōkuhanarete imasuga, guarani-zoku no ichibudearu 
+mura no 1tsudesu."
 tt_transition2,Chapter 02 - Training Body and Soul,Capítulo 02 - Treinando Corpo e Alma,Dai 02-shō - karada to tamashī no torēningu
 txt_transition2,object,Objeto,o
-ob,hi,oi,yo
+conti_tr,Continue,Continuar,Keizoku suru
 ald_pl1,Welcome to the Guarani village!,Bem vindo a aldeia guarani !,Guaranī mura e yōkoso!
+dir_art,Art Director,Diretor de Arte,Bijutsu kantoku
+act_tr,Actors,Atores,Haiyū
+prod_tr,Producer,Produtor,Purode~yūsā
+tes_ters,Testers,Testadores,Tesutā
+cnt_music,Music Content,Conteúdo Musical,Ongaku kontentsu
+agr_tr,Special Thanks,Agradecimentos Especiais,Tokubetsuna kansha
+orient_tr,Advisor,Orientador,Adobaizā
+banca_tr,Examining Board,Banca Examinadora,Shinsa iinkai
+chrt_move,"Character Movement
+A -> Left
+D -> Right
+S -> Down
+W -> Up
+","Movimentos do Personagem
+A   -> Esquerda
+D  -> Direita
+S  -> Baixo
+W -> Cima
+","Kyarakutā no ugoki 
+A - > hidari 
+D - > migi 
+S - > tei 
+W - >-jō "
+chrt_interact,"Interaction
+E -> Interact
+P -> Pause
+L -> Shoot","Interação
+E -> Interagir
+P -> Pausa
+L -> Atirar 
+","Intarakushon 
+E - > taiwa 
+P - > ichiji teishi 
+L - > shūto "
+music_tr,Music Volume,Volume da Música,Ongaku no boryūmu
+credits_tr,"ART DIRECTOR
+JOCELINO FARIAS GARCIA
+
+ACTORS
+JOCELINO FARIAS GARCIA
+IVO MACHADO GARCIA
+
+PRODUCER
+JOCELINO FARIAS GARCIA
+
+TESTERS
+JOCELINO FARIAS GARCIA
+JONAS FARIAS GARCIA
+RAMONA FARIAS
+
+ENGINE
+GODOT GAME ENGINE VERSION 3.1.1
+
+GAME STUDIO
+RED SALET STUDIOS
+
+MUSICAL CONTENT
+AUTHOR: ALEXANDR ZHELANOV
+SONGS:
+JOURNEY TO THE EAST ROCKS
+
+THANKS
+
+ADVISOR:
+ITALO D. MACHADO
+
+EXAMINING BOARD:
+ITALO D. MACHADO
+LUCIELE T.B. GUERRA
+ICARO L. IGLESIAS
+
+TESTERS
+GODOT ENGINE COMMUNITY","
+DIRETOR DE ARTE
+JOCELINO  FARIAS  GARCIA
+
+ATORES
+JOCELINO  FARIAS  GARCIA
+IVO  MACHADO  GARCIA
+
+PRODUTOR
+JOCELINO  FARIAS  GARCIA
+
+TESTERS
+JOCELINO  FARIAS  GARCIA
+JONAS FARIAS GARCIA
+RAMONA FARIAS 
+
+ENGINE 
+GODOT  GAME  ENGINE  VERSION 3.1.1
+
+GAME STUDIO
+RED  SALET  STUDIOS
+
+CONTEÚDO MUSICAL
+AUTOR:  ALEXANDR ZHELANOV
+MÚSICAS: 
+                JOURNEY TO THE EAST ROCKS
+
+AGRADECIMENTOS
+
+ORIENTADOR: 
+        ITALO D. MACHADO
+
+BANCA: 
+        ITALO D. MACHADO
+        LUCIELE T. B. GUERRA
+        ICARO L. IGLESIAS
+
+TESTERS
+COMUNIDADE  GODOT  ENGINE
+
+","Bijutsu kantoku 
+JOCELINO FARIAS GARCIA 
+
+haiyū 
+JOCELINO FARIAS GARCIA
+IVO MACHADO GARCIA 
+
+purode~yūsā 
+JOCELINO FARIAS GARCIA
+
+tesutā 
+JOCELINO FARIAS GARCIA
+JONAS FARIAS GARCIA
+RAMONA FARIAS
+
+enjin 
+GODOT gēmuenjinbājon 3. 1. 1 
+
+Gēmusutajio 
+RED SALET STUDIOS 
+
+ongaku kontentsu 
+chosha:
+ ALEXANDR ZHELANOV 
+kyoku: Īsutorokkusu e no tabi 
+arigatō 
+
+komon:
+ ITALO D. MACHADO 
+
+ginkō:
+ ITALO D. MACHADO 
+LUCIELE T. B. GUERRA
+ICARO L. IGLESIAS 
+
+tesutā 
+GODOT enjin komyuniti"

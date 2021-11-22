@@ -1,15 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Photo/configIcon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/diversos/button/button.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/another_america/Another America.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Scenes/Main/main.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Main/MAINBackground.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 84
 outline_color = Color( 0.780392, 0.0745098, 0.407843, 1 )
 font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 6 )
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -21,140 +34,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Panel" type="Panel" parent="."]
-margin_left = -3.4126
-margin_top = -6.0
-margin_right = 995.587
-margin_bottom = 610.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 446.935, 258.383 )
-scale = Vector2( 1.12104, 1.09591 )
-texture = ExtResource( 5 )
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 120
-custom_constants/margin_top = 80
-custom_constants/margin_left = 140
-custom_constants/margin_bottom = 80
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_left = 140.0
-margin_top = 80.0
-margin_right = 680.0
-margin_bottom = 400.0
-alignment = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_right = 76.0
-margin_bottom = 320.0
-size_flags_vertical = 3
-custom_constants/separation = 25
-alignment = 1
-
-[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 82.0
-margin_right = 76.0
-margin_bottom = 102.0
-mouse_default_cursor_shape = 2
-custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
-custom_colors/font_color_pressed = Color( 0.0941176, 0.909804, 0.129412, 1 )
-text = "btn_play"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/VBoxContainer/StartButton"]
-show_behind_parent = true
-position = Vector2( 40, 10 )
-scale = Vector2( 1.4, 1.3 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CreditsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 127.0
-margin_right = 76.0
-margin_bottom = 147.0
-mouse_default_cursor_shape = 2
-custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
-custom_colors/font_color_pressed = Color( 0.0862745, 0.862745, 0.0588235, 1 )
-text = "btn_credit"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/VBoxContainer/CreditsButton"]
-show_behind_parent = true
-position = Vector2( 40, 10 )
-scale = Vector2( 1.4, 1.3 )
-texture = ExtResource( 3 )
-region_rect = Rect2( 146, 30, 146, 30 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="HowtoPlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 172.0
-margin_right = 76.0
-margin_bottom = 192.0
-mouse_default_cursor_shape = 2
-custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
-custom_colors/font_color_pressed = Color( 0.101961, 0.866667, 0.0392157, 1 )
-text = "btn_how"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/VBoxContainer/HowtoPlayButton"]
-show_behind_parent = true
-position = Vector2( 40, 10 )
-scale = Vector2( 1.4, 1.3 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 217.0
-margin_right = 76.0
-margin_bottom = 237.0
-mouse_default_cursor_shape = 2
-custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
-custom_colors/font_color_pressed = Color( 0.258824, 0.956863, 0.0352941, 1 )
-text = "btn_exit"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/VBoxContainer/ExitButton"]
-show_behind_parent = true
-position = Vector2( 40, 10 )
-scale = Vector2( 1.4, 1.3 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 80.0
-margin_right = 540.0
-margin_bottom = 320.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="Background" parent="." instance=ExtResource( 5 )]
 
 [node name="ConfigButton" type="TextureButton" parent="."]
 margin_left = 729.453
@@ -181,10 +61,124 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_mouse_exited"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HowtoPlayButton" to="." method="_on_HowtoPlayButton_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 55.0
+margin_top = 155.0
+margin_right = 161.0
+margin_bottom = 182.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.0941176, 0.909804, 0.129412, 1 )
+text = "btn_play"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="StartButton"]
+show_behind_parent = true
+position = Vector2( 70.227, 15 )
+scale = Vector2( 2.2, 1.6 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 55.0
+margin_top = 195.0
+margin_right = 131.0
+margin_bottom = 215.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.0862745, 0.862745, 0.0588235, 1 )
+text = "btn_credit"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CreditsButton"]
+show_behind_parent = true
+position = Vector2( 69.333, 15 )
+scale = Vector2( 2.2, 1.6 )
+texture = ExtResource( 3 )
+region_rect = Rect2( 146, 30, 146, 30 )
+
+[node name="HowtoPlayButton" type="Button" parent="."]
+margin_left = 55.0
+margin_top = 235.0
+margin_right = 120.0
+margin_bottom = 255.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.101961, 0.866667, 0.0392157, 1 )
+text = "btn_how"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HowtoPlayButton"]
+show_behind_parent = true
+position = Vector2( 70, 15 )
+scale = Vector2( 2.2, 1.6 )
+texture = ExtResource( 3 )
+
+[node name="AboutMore" type="Button" parent="."]
+margin_left = 55.0
+margin_top = 275.0
+margin_right = 118.0
+margin_bottom = 295.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.258824, 0.956863, 0.0352941, 1 )
+text = "btn_more"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="AboutMore"]
+show_behind_parent = true
+position = Vector2( 70, 15 )
+scale = Vector2( 2.2, 1.6 )
+texture = ExtResource( 3 )
+
+[node name="ExitButton2" type="Button" parent="."]
+margin_left = 53.775
+margin_top = 314.809
+margin_right = 135.775
+margin_bottom = 341.809
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.258824, 0.956863, 0.0352941, 1 )
+text = "btn_exit"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="ExitButton2"]
+show_behind_parent = true
+position = Vector2( 70, 15 )
+scale = Vector2( 2.2, 1.6 )
+texture = ExtResource( 3 )
 [connection signal="pressed" from="ConfigButton" to="." method="_on_ConfigButton_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="mouse_entered" from="CreditsButton" to="." method="_on_CreditsButton_mouse_entered"]
+[connection signal="mouse_exited" from="CreditsButton" to="." method="_on_CreditsButton_mouse_exited"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="HowtoPlayButton" to="." method="_on_HowtoPlayButton_pressed"]
+[connection signal="pressed" from="ExitButton2" to="." method="_on_ExitButton_pressed"]

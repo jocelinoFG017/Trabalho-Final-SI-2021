@@ -60,7 +60,7 @@ text = "txt_transition1"
 position = Vector2( 489.399, 248.838 )
 scale = Vector2( 3.91143, 2.81701 )
 frames = SubResource( 2 )
-frame = 6
+frame = 5
 speed_scale = 0.5
 playing = true
 

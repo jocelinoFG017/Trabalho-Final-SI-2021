@@ -10,7 +10,7 @@ export(int) var jump_speed # velocidade de pulo = -305
 export(int) var gravity # gravidade = 750
 
 enum {IDLE, RUN, JUMP, HURT, DEAD, SITDOWN, ATTACK}
-#var isAttacking = false # melee attack 
+#var isAttacking = false # melee attack
 
 #  Menu de armas
 enum {PUNCH, KNIFE, ROCK, BOW, SPEAR}
@@ -33,7 +33,7 @@ var flechada = 1
 
 signal hpChanged(amout)
 signal dead
-signal entra_em_uma_casa
+#signal entra_em_uma_casa
 
 func _ready():
 	change_state(IDLE)
@@ -90,6 +90,7 @@ func change_state(new_state):
 func get_input():
 	if state == HURT:
 		return
+	var pauseScreen = Input.is_action_just_pressed("pause")
 	var right = Input.is_action_pressed("right")
 	var left = Input.is_action_pressed("left")
 	var jump = Input.is_action_just_pressed("jump")
@@ -99,6 +100,10 @@ func get_input():
 	
 	
 	velocity.x = 0
+	
+	# pause screen
+	if pauseScreen:
+		get_tree().paused = true
 	
 	#  Logica de movimento
 	if right:
@@ -181,3 +186,7 @@ func hurt():
 	#if $AnimatedSprite.animation == "KnifeAttack":
 		#$AttackArea/CollisionShape2D.disabled = true
 		#isAttacking = false
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Scenes/Main/Main.tscn")

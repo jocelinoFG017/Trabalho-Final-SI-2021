@@ -4,6 +4,7 @@ onready var plaquinha = $placa/Label
 onready var plaquinha2 = $placa2/Label
 
 func _ready():
+	#global
 	$Player.start($PlayerSpawn.position)
 	set_camera_limits()
 
@@ -37,3 +38,7 @@ func _on_placa_placa_ativada(current_status)-> void:
 
 func _on_placa2_placa_ativada():
 	pass # Replace with function body.
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Scenes/Main/Main.tscn")

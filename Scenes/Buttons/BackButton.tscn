@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="BackButton" type="Button"]
+margin_right = 101.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
