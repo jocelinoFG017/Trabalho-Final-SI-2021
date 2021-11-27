@@ -1,30 +1,30 @@
 extends KinematicBody2D
 
-# Variaveis externas
+#  Externals Variables 
 export (int) var speed
 export (int) var gravity
 
-# Estados do inimigo
+#  Enemies states
 enum{WALK, HURT, DEAD}
 
 var facing = 1
 
-# Estado
+#  state
 var state
 var anim
 var new_anim
 var velocity = Vector2()
 
-# Quantidade de vidas
+#  Health quantity 
 var enemy_life = 3
 
 
-#  sinal de mudança no valor da vida
+#  HEALTH change value signal
 signal enemyhpChanged(valor)
-#  sinal de morte
+#  Dead signal
 signal enemydead
 
-#signal take_hit(valor)
+#  signal take_hit(valor)
 
 
 func _ready():
@@ -62,7 +62,7 @@ func _physics_process(delta):
 	if new_anim != anim:
 		anim = new_anim
 		$AnimatedSprite.play(anim)
-	#  move o inimigo
+	#  Move the enemy
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	for idx in range(get_slide_count()):

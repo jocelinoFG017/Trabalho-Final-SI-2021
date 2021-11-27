@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 4
+emission_point_count = 1
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 40, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="Node" type="Node"]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 344.466, 198.425 )
+amount = 20
+lifetime = 2.0
+fixed_fps = 1
+process_material = SubResource( 1 )

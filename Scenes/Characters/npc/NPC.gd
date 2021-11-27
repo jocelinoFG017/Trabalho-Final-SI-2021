@@ -1,5 +1,5 @@
 extends Area2D
-
+#  This code is for the NPC comportament and yours dialogues
 export(String, FILE, "*.json") var dialogue_file
 
 var dialogues = []
@@ -49,7 +49,8 @@ func next_line():
 	#$CanvasLayer/NinePatchRect/Name
 	$CanvasLayer/sprite/Name.text = dialogues[current_dialogue_id]["name"]
 	$CanvasLayer/sprite/Message.text = dialogues[current_dialogue_id]["text"]
-	
+
+
 func load_dialogue():
 	var file = File.new()
 	if file.file_exists(dialogue_file):
@@ -63,4 +64,3 @@ func load_dialogue():
 #	if dialogue_player:
 #		print("Rodando dialogo")
 #		dialogue_player.play()
-

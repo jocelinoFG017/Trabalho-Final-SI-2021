@@ -20,10 +20,12 @@ func localiza(new_idioma):
 			TranslationServer.set_locale("ja")
 
 func _on_BackButton_pressed():
+	$menuSound.play()
 	get_tree().change_scene("res://Scenes/Main/Main.tscn")
 
 
 func _on_FeedbackButton_pressed():
+	$menuSound.play()
 	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSdJbUFutyL4GDr5todKsM7HmUHkmCK81ScHj48xhx6FDrY9og/viewform")
 
 
@@ -32,13 +34,16 @@ func _on_UpdateLog_pressed():
 
 
 func _on_LanguageButton_pressed():
+	$menuSound.play()
 	localiza(PTBR)
 
 
 func _on_LanguageButton2_pressed():
+	$menuSound.play()
 	localiza(EN)
 
 func _on_LanguageButtonJA_pressed():
+	$menuSound.play()
 	localiza(JA)
 
 
@@ -47,6 +52,6 @@ func _on_HSlider_value_changed(value):
 
 
 func _on_SupportButton_pressed():
+	$menuSound.play()
 	OS.shell_open("https://twitter.com/Jocelino017")
 	pass # Replace with function body.
-	

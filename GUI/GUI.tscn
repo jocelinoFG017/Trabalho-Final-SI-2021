@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Photo/configIcon.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Assets/Fonts/another_america/Another America.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scenes/Main/MAINBackground.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/items/line.png" type="Texture" id=7]
+[ext_resource path="res://Assets/audio/menu_sound.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/Buttons/Menu_click_sound.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 84
@@ -13,6 +16,7 @@ outline_color = Color( 0.780392, 0.0745098, 0.407843, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
+outline_color = Color( 0.0862745, 0.027451, 0.027451, 1 )
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -69,6 +73,7 @@ margin_right = 161.0
 margin_bottom = 182.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
 custom_colors/font_color_pressed = Color( 0.0941176, 0.909804, 0.129412, 1 )
 text = "btn_play"
@@ -80,12 +85,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="StartButton"]
 show_behind_parent = true
-position = Vector2( 70.227, 15 )
-scale = Vector2( 2.2, 1.6 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 57, 28 )
+scale = Vector2( 1, 0.05 )
+texture = ExtResource( 7 )
 
 [node name="CreditsButton" type="Button" parent="."]
 margin_left = 55.0
@@ -94,6 +96,7 @@ margin_right = 131.0
 margin_bottom = 215.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
 custom_colors/font_color_pressed = Color( 0.0862745, 0.862745, 0.0588235, 1 )
 text = "btn_credit"
@@ -103,12 +106,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="CreditsButton"]
+[node name="line" type="Sprite" parent="CreditsButton"]
 show_behind_parent = true
-position = Vector2( 69.333, 15 )
-scale = Vector2( 2.2, 1.6 )
-texture = ExtResource( 3 )
-region_rect = Rect2( 146, 30, 146, 30 )
+position = Vector2( 57, 30 )
+scale = Vector2( 1, 0.05 )
+texture = ExtResource( 7 )
 
 [node name="HowtoPlayButton" type="Button" parent="."]
 margin_left = 55.0
@@ -117,6 +119,7 @@ margin_right = 120.0
 margin_bottom = 255.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
 custom_colors/font_color_pressed = Color( 0.101961, 0.866667, 0.0392157, 1 )
 text = "btn_how"
@@ -126,11 +129,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="HowtoPlayButton"]
+[node name="line" type="Sprite" parent="HowtoPlayButton"]
 show_behind_parent = true
-position = Vector2( 70, 15 )
-scale = Vector2( 2.2, 1.6 )
-texture = ExtResource( 3 )
+position = Vector2( 57, 35 )
+scale = Vector2( 1, 0.05 )
+texture = ExtResource( 7 )
 
 [node name="AboutMore" type="Button" parent="."]
 margin_left = 55.0
@@ -139,6 +142,7 @@ margin_right = 118.0
 margin_bottom = 295.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
 custom_colors/font_color_pressed = Color( 0.258824, 0.956863, 0.0352941, 1 )
 text = "btn_more"
@@ -148,11 +152,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="AboutMore"]
+[node name="line" type="Sprite" parent="AboutMore"]
 show_behind_parent = true
-position = Vector2( 70, 15 )
-scale = Vector2( 2.2, 1.6 )
-texture = ExtResource( 3 )
+position = Vector2( 57, 35 )
+scale = Vector2( 1, 0.05 )
+texture = ExtResource( 7 )
+
+[node name="about_sound" type="AudioStreamPlayer" parent="AboutMore"]
+stream = ExtResource( 8 )
 
 [node name="ExitButton2" type="Button" parent="."]
 margin_left = 53.775
@@ -161,6 +168,7 @@ margin_right = 135.775
 margin_bottom = 341.809
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0.74902, 0, 1 )
 custom_colors/font_color_pressed = Color( 0.258824, 0.956863, 0.0352941, 1 )
 text = "btn_exit"
@@ -171,14 +179,22 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="ExitButton2"]
+visible = false
 show_behind_parent = true
 position = Vector2( 70, 15 )
 scale = Vector2( 2.2, 1.6 )
 texture = ExtResource( 3 )
+
+[node name="line" type="Sprite" parent="ExitButton2"]
+show_behind_parent = true
+position = Vector2( 58.225, 35 )
+scale = Vector2( 1, 0.05 )
+texture = ExtResource( 7 )
+
+[node name="menuSound" parent="." instance=ExtResource( 9 )]
 [connection signal="pressed" from="ConfigButton" to="." method="_on_ConfigButton_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="mouse_entered" from="CreditsButton" to="." method="_on_CreditsButton_mouse_entered"]
-[connection signal="mouse_exited" from="CreditsButton" to="." method="_on_CreditsButton_mouse_exited"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="HowtoPlayButton" to="." method="_on_HowtoPlayButton_pressed"]
+[connection signal="pressed" from="AboutMore" to="." method="_on_AboutMore_pressed"]
 [connection signal="pressed" from="ExitButton2" to="." method="_on_ExitButton_pressed"]

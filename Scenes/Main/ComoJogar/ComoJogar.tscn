@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Main/ComoJogar/ComoJogar.gd" type="Script" id=2]
 [ext_resource path="res://Assets/diversos/panel/panel2.png" type="Texture" id=3]
 [ext_resource path="res://scenesRandom/panel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenesRandom/backgroundButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Buttons/Menu_click_sound.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -60,4 +61,6 @@ __meta__ = {
 
 [node name="Sprite" parent="Button" instance=ExtResource( 5 )]
 position = Vector2( 47.1362, 23.8281 )
+
+[node name="menuSound" parent="." instance=ExtResource( 6 )]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

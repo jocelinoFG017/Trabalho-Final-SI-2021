@@ -1,5 +1,6 @@
 extends Area2D
-
+#  This scene basically change the actually scene to
+#  the near scene
 export(String, FILE,"*.tscn") var cenas
 
 func _input(event):

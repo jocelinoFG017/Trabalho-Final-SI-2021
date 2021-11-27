@@ -8,7 +8,6 @@ func _ready():
 	pass
 
 
-
 func get_input():
 	velocity = Vector2()
 	var right = Input.is_action_pressed("right")

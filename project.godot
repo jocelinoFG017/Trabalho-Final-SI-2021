@@ -19,10 +19,6 @@ config/name="Naski1.3"
 run/main_scene="res://Scenes/PreGame/PreGame.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-GlobalAudio="res://Scenes/Main/AudioStreamPlayer.tscn"
-
 [display]
 
 window/size/width=800
@@ -139,6 +135,7 @@ pause={
 2d_physics/layer_7="placa"
 2d_physics/layer_8="items"
 2d_physics/layer_9="npc"
+2d_physics/layer_10="gate"
 
 [locale]
 
@@ -147,7 +144,6 @@ locale_filter=[ 0, [ "en", "pt_BR" ] ]
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false

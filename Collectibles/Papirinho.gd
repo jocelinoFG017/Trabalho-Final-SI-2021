@@ -22,6 +22,3 @@ func _input(event):
 			#$Label.hide()
 			#$Panel.hide()
 			queue_free()
-
-	
-	

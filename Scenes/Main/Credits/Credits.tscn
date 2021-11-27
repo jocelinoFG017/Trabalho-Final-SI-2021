@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Main/Credits/Credits.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/another_america/Another America.ttf" type="DynamicFontData" id=2]
@@ -9,11 +9,12 @@
 [ext_resource path="res://Assets/Photo/github_flag.png" type="Texture" id=7]
 [ext_resource path="res://scenesRandom/backgroundButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/diversos/panel/panel3.png" type="Texture" id=9]
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 6 )
+[ext_resource path="res://Scenes/Buttons/Menu_click_sound.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 84
 outline_color = Color( 0.0901961, 0.0392157, 0.0392157, 1 )
 font_data = ExtResource( 2 )
@@ -30,7 +31,7 @@ margin_top = 46.4703
 margin_right = 134.649
 margin_bottom = 81.4703
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_hover = Color( 0.819608, 0.168627, 0.168627, 1 )
 custom_colors/font_color_pressed = Color( 0.0784314, 0.67451, 0.145098, 1 )
 text = "btn_back"
@@ -47,7 +48,7 @@ margin_left = 334.465
 margin_top = 38.8216
 margin_right = 494.465
 margin_bottom = 140.822
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "NASKI"
 __meta__ = {
@@ -107,5 +108,7 @@ uppercase = true
 [node name="panel" parent="." instance=ExtResource( 3 )]
 position = Vector2( 441.886, 233.937 )
 texture = ExtResource( 9 )
+
+[node name="menuSound" parent="." instance=ExtResource( 10 )]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="GitButton" to="." method="_on_GitButton_pressed"]

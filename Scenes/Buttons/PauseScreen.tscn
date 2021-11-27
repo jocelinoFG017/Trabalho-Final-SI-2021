@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Buttons/PauseScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 2 )
 
 [node name="PauseScreen" type="Control"]
 script = ExtResource( 1 )
@@ -10,11 +19,30 @@ __meta__ = {
 
 [node name="ContinueButton" type="Button" parent="."]
 visible = false
-margin_left = 268.881
-margin_top = 200.363
-margin_right = 498.881
-margin_bottom = 254.363
+margin_left = 269.549
+margin_top = 224.863
+margin_right = 499.549
+margin_bottom = 278.863
+rect_scale = Vector2( 0.2, 0.2 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
 text = "Continue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BackButton" type="Button" parent="."]
+visible = false
+margin_left = 268.988
+margin_top = 237.912
+margin_right = 498.988
+margin_bottom = 291.912
+rect_scale = Vector2( 0.2, 0.2 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

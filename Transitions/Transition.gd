@@ -1,8 +1,8 @@
 extends Control
-
+#  This code is for the transitions in game
 
 func _ready():
-	yield(get_tree().create_timer(3), 'timeout')
+	yield(get_tree().create_timer(5), 'timeout')
 	$Button.show()
 
 func _input(event):
@@ -10,6 +10,6 @@ func _input(event):
 		_on_Button_pressed()
 
 
-
 func _on_Button_pressed():
+	$menuSound.play()
 	get_tree().change_scene("res://levels/Level01/Level_01.tscn")

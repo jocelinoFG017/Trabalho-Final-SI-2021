@@ -1,22 +1,19 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Photo/idle/idle6.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Photo/idle/idle1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Photo/idle/idle5.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Photo/idle/idle4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle4.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle6.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Photo/nASKI/jump/jump_up.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Photo/nASKI/jump/jump_down.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Photo/nASKI/ArcoFlecha/BowAttack2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Photo/nASKI/ArcoFlecha/BowAttack1.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Photo/KnifeAttack/l0_sprite_1.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Photo/KnifeAttack/l1_sprite_2.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Photo/KnifeAttack/l2_sprite_3.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Photo/KnifeAttack/l3_sprite_4.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle3.png" type="Texture" id=11]
 [ext_resource path="res://player/Health/healthBar.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/audio/hurt1.ogg" type="AudioStream" id=17]
-[ext_resource path="res://Assets/Photo/idle/idle2.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Photo/idle/idle3.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/Buttons/PauseScreen.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Photo/nASKI/Agachar/sitDown3.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Photo/nASKI/Agachar/sitDown2.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Photo/nASKI/Agachar/sitDown1.png" type="Texture" id=24]
@@ -39,7 +36,7 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -49,19 +46,24 @@ animations = [ {
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "jump_down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ) ],
 "loop": false,
 "name": "BowAttack",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "BowIdle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "jump_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "jump_down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ), ExtResource( 23 ), ExtResource( 22 ) ],
@@ -73,20 +75,10 @@ animations = [ {
 "loop": true,
 "name": "BowRun",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "KnifeAttack",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "BowIdle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 2.67496, 6.37937 )
+extents = Vector2( 1.8013, 4.8217 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.99946, 25.0421 )
@@ -97,7 +89,7 @@ extents = Vector2( 8.99946, 25.0421 )
 position = Vector2( 78.3449, 97.0254 )
 scale = Vector2( 2, 2 )
 collision_layer = 2
-collision_mask = 445
+collision_mask = 957
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -107,10 +99,10 @@ jump_speed = -280
 gravity = 750
 
 [node name="healthBar" parent="." instance=ExtResource( 16 )]
-margin_left = -3.34198
-margin_top = -6.35604
-margin_right = -3.34198
-margin_bottom = -6.35604
+margin_left = -3.0
+margin_top = -9.53953
+margin_right = -3.0
+margin_bottom = -9.53953
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
@@ -123,19 +115,19 @@ margin_bottom = -54.4916
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.9, 2 )
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
-animation = "BowAttack"
-frame = 3
+animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.615237, 2.88476 )
+position = Vector2( 0.686594, 1.75588 )
+scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 1.1, -10 )
 current = true
-zoom = Vector2( 0.28, 0.28 )
+zoom = Vector2( 0.35, 0.35 )
 limit_top = 0
 limit_bottom = 10000
 drag_margin_left = 0.1
@@ -155,4 +147,12 @@ stream = ExtResource( 17 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 5.19139, -0.140308 )
+
+[node name="PauseScreen" parent="." instance=ExtResource( 18 )]
+visible = false
+margin_left = -293.124
+margin_top = -242.896
+margin_right = -293.124
+margin_bottom = -242.896
 [connection signal="hpChanged" from="." to="healthBar" method="_on_Player_hpChanged"]
+[connection signal="continue_choosed" from="PauseScreen" to="." method="_on_PauseScreen_continue_choosed"]

@@ -1,11 +1,14 @@
 extends Node2D
 
+
 onready var plaquinha = $placa/Label
 #onready var plaquinha2 = $placa2/Label
+
 
 func _ready():
 	$Player.start($PlayerSpawn.position)
 	set_camera_limits()
+
 
 func set_camera_limits():
 	var map_size = $World.get_used_rect()

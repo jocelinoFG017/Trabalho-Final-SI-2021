@@ -1,4 +1,6 @@
 extends KinematicBody2D
+#  This is the player code, here you will find all the 
+#  of the mechanics, FSM and the player inputs.
 
 #  Carrega uma PackedScene(cena empacotada)
 var pre_pedra = preload("res://Disparos/Rocks/Rock.tscn")
@@ -9,7 +11,7 @@ export(int) var run_speed  # velocidade de movimento  = 150
 export(int) var jump_speed # velocidade de pulo = -305
 export(int) var gravity # gravidade = 750
 
-enum {IDLE, RUN, JUMP, HURT, DEAD, SITDOWN, ATTACK}
+enum {IDLE, RUN, JUMP, HURT, DEAD, SITDOWN, ATTACK, STOP}
 #var isAttacking = false # melee attack
 
 #  Menu de armas
@@ -80,10 +82,16 @@ func change_state(new_state):
 				change_state(DEAD)
 		SITDOWN:
 			new_anim = 'SitDown'
+		STOP:
+			run_speed = 0
+			jump_speed = 0
+			velocity.x = 0
+			velocity.y = 0
+			$PauseScreen.stop = true
+			#$PauseScreen.connect("continue_choosed", self, "_on_ContinueButton_pressed()")
 		DEAD:
 			emit_signal("dead")
 			queue_free()
-
 
 
 #  Funcao de dados de entrada, que contem dados do movimento do personagem e as lógicas de estados
@@ -103,7 +111,11 @@ func get_input():
 	
 	# pause screen
 	if pauseScreen:
-		get_tree().paused = true
+		$PauseScreen.show()
+		change_state(STOP)
+		#print($PauseScreen/ContinueButton.get_action_mode())
+		
+		print("pulou o if")
 	
 	#  Logica de movimento
 	if right:
@@ -153,10 +165,8 @@ func get_input():
 			var flecha = pre_flecha.instance()
 			flecha.global_position = $Position2D.global_position
 			if $AnimatedSprite.flip_h == true:
-				
 				flecha.dir = Vector2(-1,0)
 			if $AnimatedSprite.flip_h == false:
-				
 				flecha.dir = Vector2(1,0)
 			get_parent().add_child(flecha)
 			
@@ -190,3 +200,13 @@ func hurt():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Scenes/Main/Main.tscn")
+
+
+func _on_PauseScreen_continue_choosed():
+	change_state(IDLE)
+	print("sinal ativo")
+	if $PauseScreen.stop == true:
+		print("acessou o if")
+		run_speed = 150
+		jump_speed = -280
+		#change_state(IDLE)

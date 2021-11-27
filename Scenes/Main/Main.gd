@@ -1,10 +1,9 @@
 extends Node
 
 func _ready():
-	#$AudioStreamPlayer.play()
+	$AudioStreamPlayer.play()
 	#GlobalAudio.get_node("/root/GlobalAudio")
 	pass
-
 
 
 # Quando a música roda de novo

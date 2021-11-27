@@ -1,7 +1,6 @@
-[gd_resource type="TileSet" load_steps=7 format=2]
+[gd_resource type="TileSet" load_steps=6 format=2]
 
 [ext_resource path="res://assets/environment/layers/props.png" type="Texture" id=1]
-[ext_resource path="res://assets/gem_spawn.png" type="Texture" id=2]
 [ext_resource path="res://assets/cherry_spawn.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -134,7 +133,6 @@ points = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 6/shapes = [  ]
 6/z_index = 0
 7/name = "gem"
-7/texture = ExtResource( 2 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 16, 16 )
