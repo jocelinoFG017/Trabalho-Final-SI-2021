@@ -2,21 +2,22 @@
 
 Game: Naski
 
-Version: 0.6
+Version: 0.7
 ### <b><i>1. What's new ?</i></b>
-- Pause Screen in game 
-- New level 01 - items
-- New sound Effects
+- Phase 01 - Design Changes
+- Level 01-05 - Remake I
+- 
 
 
 ### <b><i>2. Details</i></b>
  
-- Some unnecessary and redundant files removed III.
- - Gate Village added
- - Level 01 - Remake I
- - Sound Effect added 
- - Cutscene(VideoPreLevel) indefinitely removed
- 
+- Some unnecessary and redundant files removed IV.
+ - <\SomethingHere|>
+ - Level 01 - Remake II
+ - Level 01 - aldeia - Remake I
+ - Level 01 - aldeia_Hunt - Remake I
+ - Level 01 - aldeia_Burn - Remake I
+ - Level 01 - Boss - Remake I 
  - Some much bug fixed.
 
 ### <b><i>3. Bugs:</b> Related and Solved</i>
@@ -28,10 +29,9 @@ Version: 0.6
         - Dialogue System translation necessary.
         - Translation in transition 2,3,4,5 necessary.
         - Need translation to boards and letters, for level 2, 3, 4, 5.
+        - Need new enemies
+        - Pause screen has a several bug
 
 - Solved/Fixed/Working Now
   
-        - Button More About does not work.
-        - Need translation to boards and letters - Level 01.
-        - Need a pause button in game 
-        - Need a backButton in game 
+        - Adjust the player speed for each level.

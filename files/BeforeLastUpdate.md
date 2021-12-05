@@ -1,23 +1,21 @@
-## Update 05
+## Update 06
 
 Game: Naski
 
-Version: 0.5
+Version: 0.6
 ### <b><i>1. What's new ?</i></b>
-- New buttons to interact.
-- New tematic main background.
-- New background music
+- Pause Screen in game 
+- New level 01 - items
+- New sound Effects
 
 
 ### <b><i>2. Details</i></b>
  
- - Some unnecessary and redundant files removed II.
- - Javali dead animation it was colored.
- - Translations in menu are completed.
- - Font: Montreal Regular in use now.
- - Music: Journey to the east rocks is on.
- - Music Control config added.
- - Player support have a link now.
+- Some unnecessary and redundant files removed III.
+ - Gate Village added
+ - Level 01 - Remake I
+ - Sound Effect added 
+ - Cutscene(VideoPreLevel) indefinitely removed
  
  - Some much bug fixed.
 
@@ -25,16 +23,15 @@ Version: 0.5
 
 - Related/Not Working
 
-        - Need a backButton in game 
-        - Need a pause button in game 
         - Complex Finite State Machine (FSM) added, but not functional (incomplete).
-        - Cutscene(VideoPreLevel) temporarily removed
         - inventory system added, but not functional
         - Dialogue System translation necessary.
         - Translation in transition 2,3,4,5 necessary.
-        - Button More About does not work.
-        - Need translation to boards and letters.
+        - Need translation to boards and letters, for level 2, 3, 4, 5.
 
 - Solved/Fixed/Working Now
   
-        - GUI needs visual upgrade
+        - Button More About does not work.
+        - Need translation to boards and letters - Level 01.
+        - Need a pause button in game 
+        - Need a backButton in game 

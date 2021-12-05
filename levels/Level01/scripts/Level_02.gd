@@ -11,8 +11,8 @@ func _ready():
 
 
 func set_camera_limits():
-	var map_size = $World.get_used_rect()
-	var cell_size = $World.cell_size
+	var map_size = $grass.get_used_rect()
+	var cell_size = $grass.cell_size
 	$Player/Camera2D.limit_left = (map_size.position.x - 5) * cell_size.x
 	$Player/Camera2D.limit_right = (map_size.end.x + 5) * cell_size.x
 

@@ -1,5 +1,5 @@
 extends Control
-
+# This file is the menu script.
 
 func _ready():
 	pass

@@ -1,5 +1,5 @@
 extends Area2D
-
+# Arrow Script
 #var res = preload("res://testSheet.tscn").intance()
 
 #  Direcao da pedra

@@ -62,7 +62,7 @@ func change_state(new_state):
 	match state:
 		IDLE:
 			new_anim = 'idle'
-		RUN: 
+		RUN:
 			new_anim = 'run'
 		JUMP:
 			new_anim = 'jump_up'
@@ -123,6 +123,7 @@ func get_input():
 		$AnimatedSprite.flip_h = false
 	
 	if left:
+		#$Walk_sound.play()
 		velocity.x -= run_speed
 		$AnimatedSprite.flip_h = true
 		
@@ -210,3 +211,8 @@ func _on_PauseScreen_continue_choosed():
 		run_speed = 150
 		jump_speed = -280
 		#change_state(IDLE)
+
+
+func _on_Walk_sound_finished():
+	#$Walk_sound.play()
+	pass

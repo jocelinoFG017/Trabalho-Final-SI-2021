@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenesRandom/panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenesRandom/backgroundButton.tscn" type="PackedScene" id=2]
@@ -28,6 +28,9 @@ font_data = ExtResource( 8 )
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 8 )
 
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 8 )
+
 [node name="Settings" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -39,66 +42,55 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -96.8637
-margin_top = 102.119
-margin_right = 168.136
-margin_bottom = 102.119
-rect_min_size = Vector2( 100, 100 )
-scroll_horizontal_enabled = false
+[node name="config" type="Control" parent="."]
+margin_left = -55.4992
+margin_top = 3.36359
+margin_right = -15.4992
+margin_bottom = 43.3636
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
-margin_right = 264.0
-margin_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
-margin_right = 132.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
-margin_right = 132.0
-margin_bottom = 21.0
+[node name="Label" type="Label" parent="config"]
+margin_left = 333.942
+margin_top = 87.968
+margin_right = 405.942
+margin_bottom = 108.968
 custom_fonts/font = SubResource( 1 )
 text = "music_tr"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label2" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
-margin_top = 25.0
-margin_right = 132.0
-margin_bottom = 39.0
-text = "                                 "
+[node name="Label2" type="Label" parent="config"]
+margin_left = 333.942
+margin_top = 124.833
+margin_right = 456.942
+margin_bottom = 145.833
+custom_fonts/font = SubResource( 2 )
+text = "btn_sound_effects"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
-margin_left = 136.0
-margin_right = 264.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-
-[node name="HSlider" type="HSlider" parent="ScrollContainer/HBoxContainer/VBoxContainer2"]
-margin_right = 128.0
-margin_bottom = 16.0
+[node name="HSlider" type="HSlider" parent="config"]
+margin_left = 503.0
+margin_top = 90.0
+margin_right = 629.0
+margin_bottom = 106.0
 min_value = -80.0
 max_value = 10.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer2"]
-margin_top = 20.0
-margin_right = 128.0
-margin_bottom = 40.0
-text = "                             "
-flat = true
+[node name="HSlider2" type="HSlider" parent="config"]
+margin_left = 504.0
+margin_top = 126.5
+margin_right = 630.0
+margin_bottom = 142.5
+min_value = -80.0
+max_value = 10.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -112,7 +104,7 @@ margin_top = 48.0
 margin_right = 128.0
 margin_bottom = 80.0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.929412, 0.054902, 0.054902, 1 )
 custom_colors/font_color_pressed = Color( 0.243137, 0.964706, 0.0156863, 1 )
 text = "btn_back"
@@ -132,7 +124,7 @@ margin_left = 323.975
 margin_top = 161.446
 margin_right = 483.975
 margin_bottom = 182.446
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "btn_language"
 align = 1
 __meta__ = {
@@ -197,7 +189,7 @@ margin_top = 334.5
 margin_right = 537.11
 margin_bottom = 361.5
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_hover = Color( 0.85098, 0.00392157, 0.00392157, 1 )
 custom_colors/font_color_pressed = Color( 0.235294, 0.858824, 0.145098, 1 )
 text = "btn_support"
@@ -219,7 +211,7 @@ margin_top = 405.099
 margin_right = 532.394
 margin_bottom = 432.099
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.854902, 0.0235294, 0.0235294, 1 )
 custom_colors/font_color_pressed = Color( 0.0627451, 0.827451, 0.14902, 1 )
 text = "btn_feedback"
@@ -238,11 +230,15 @@ margin_left = 348.796
 margin_top = 38.592
 margin_right = 444.796
 margin_bottom = 59.592
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "btn_setting"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="menuSound" parent="." instance=ExtResource( 9 )]
-[connection signal="value_changed" from="ScrollContainer/HBoxContainer/VBoxContainer2/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="config/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="config/HSlider2" to="." method="_on_HSlider2_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="LanguageButton" to="." method="_on_LanguageButton_pressed"]
 [connection signal="pressed" from="LanguageButton2" to="." method="_on_LanguageButton2_pressed"]

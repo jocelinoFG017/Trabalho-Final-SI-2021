@@ -8,6 +8,7 @@ var damage;
 var durability;
 var path;
 
+
 func _read_json_data(index, region, rarity, _type):
 	var items_file = File.new();
 	if not items_file.file_exists("res://items.json"):
@@ -47,10 +48,12 @@ func _get_id():
 	return id;
 	pass;
 
+
 func _get_name():
 	return item_name;
 	pass;
-	
+
+
 func _get_stat(_stat):
 	if _stat == "type":
 		return type;
@@ -63,6 +66,7 @@ func _get_stat(_stat):
 	elif _stat == "path":
 		return path;
 	pass;
+
 
 func _set_durability(value):
 	durability = value;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle1.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Photo/nASKI/ArcoFlecha/BowAttack1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Photo/idle/idle2/Layer 1_idle3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/audio/walking_sound.wav" type="AudioStream" id=12]
 [ext_resource path="res://player/Health/healthBar.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/audio/hurt1.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Scenes/Buttons/PauseScreen.tscn" type="PackedScene" id=18]
@@ -43,6 +44,16 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 36 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ) ],
 "loop": true,
+"name": "BowRun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "BowIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ) ],
+"loop": true,
 "name": "run",
 "speed": 10.0
 }, {
@@ -51,29 +62,19 @@ animations = [ {
 "name": "BowAttack",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "BowIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "jump_up",
-"speed": 5.0
+"frames": [ ExtResource( 24 ), ExtResource( 23 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "SitDown",
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "jump_down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 23 ), ExtResource( 22 ) ],
-"loop": false,
-"name": "SitDown",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "BowRun",
+"name": "jump_up",
 "speed": 5.0
 } ]
 
@@ -113,6 +114,13 @@ margin_top = -54.4916
 margin_right = -59.8463
 margin_bottom = -54.4916
 
+[node name="PauseScreen" parent="." instance=ExtResource( 18 )]
+visible = false
+margin_left = -293.124
+margin_top = -242.896
+margin_right = -293.124
+margin_bottom = -242.896
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.9, 2 )
 scale = Vector2( 0.15, 0.15 )
@@ -148,11 +156,9 @@ stream = ExtResource( 17 )
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 5.19139, -0.140308 )
 
-[node name="PauseScreen" parent="." instance=ExtResource( 18 )]
-visible = false
-margin_left = -293.124
-margin_top = -242.896
-margin_right = -293.124
-margin_bottom = -242.896
+[node name="Walk_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+bus = "SFX"
 [connection signal="hpChanged" from="." to="healthBar" method="_on_Player_hpChanged"]
 [connection signal="continue_choosed" from="PauseScreen" to="." method="_on_PauseScreen_continue_choosed"]
+[connection signal="finished" from="Walk_sound" to="." method="_on_Walk_sound_finished"]

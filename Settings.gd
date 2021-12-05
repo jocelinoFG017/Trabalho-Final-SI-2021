@@ -48,10 +48,14 @@ func _on_LanguageButtonJA_pressed():
 
 
 func _on_HSlider_value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
+
+func _on_HSlider2_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value)
 
 
 func _on_SupportButton_pressed():
 	$menuSound.play()
 	OS.shell_open("https://twitter.com/Jocelino017")
 	pass # Replace with function body.
+

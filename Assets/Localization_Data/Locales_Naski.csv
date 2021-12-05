@@ -183,8 +183,18 @@ btn_more,More About,Saiba Mais,Motto shiru
 lbl_left,Left <- A,Esquerda <- A,Hidari <- A
 lbl_right,D -> Right,Direita -> D,Migui -> D
 lbl_interact,E -> Interact,E -> Interagir,E -> Taiwa
-txt_village_welcome,Welcome to Guarani village,Bem-vindo a vila Guarani,Guarani-mura e yōkoso
-txt_game_welcome,Welcome to your new adventure,Bem-Vindo a sua nova aventura,Anata no atarashī bōken e yōkoso
+txt_village_welcome,"Welcome to 
+Guarani village","Bem-vindo a
+ vila Guarani","Guarani-mura 
+e yōkoso"
+txt_game_welcome,"Welcome to 
+your new
+adventure","Bem-Vindo 
+a sua nova
+aventura","Anata no 
+atarashī 
+bōken e
+yōkoso"
 txt_papiro_level01,"be well-
 coming to is
 new
@@ -201,3 +211,20 @@ shinchaku
 bōken, 
 wakai
 senshi"
+btn_sound_effects,Sound Effects,Efeitos Sonoros,Onkyō kōka
+txt_press_E,"Press E to 
+Interact
+","Pressione E para
+Interagir
+","E o oshite 
+sōgo sayō "
+txt_press_L,"Press L to
+shoot your
+arrows
+","Aperte L para
+disparar suas
+flechas
+","L o oshite 
+anata o 
+uchimasu
+ yajirushi"

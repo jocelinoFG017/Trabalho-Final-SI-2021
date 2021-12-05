@@ -20,9 +20,9 @@ Relatory: [Read this file](https://github.com)
 Engine: Godot Engine 3.+ win x64
 
 ## <b>Last Update</b>
-Latest version: 0.6
+Latest version: 0.7
 
 More details: [Read this file](https://github.com/jocelinoFG017/Trabalho-Final-SI-2021/blob/master/files/LastUpdate.md)
 
 ## <b>Before Last Update</b>
-last version: 0.5
+last version: 0.6

@@ -4,11 +4,14 @@ signal max_changed(new_max)
 signal changed(new_amout)
 signal depleted
 
+
 export(int) var max_amount = 10 setget set_max
 onready var current  = max_amount setget set_current
 
+
 func _ready():
 	_initialize()
+
 
 func set_max(new_max):
 	max_amount = new_max
@@ -23,7 +26,6 @@ func set_current(new_value):
 	
 	if current == 0:
 		emit_signal("depleted")
-
 
 
 func _initialize():

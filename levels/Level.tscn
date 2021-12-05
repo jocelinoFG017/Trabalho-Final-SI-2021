@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
-[ext_resource path="res://Assets/tilesets/tiles_world.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/tilesets/tiles_items.tres" type="TileSet" id=3]
-[ext_resource path="res://Assets/tilesets/tiles_spikes.tres" type="TileSet" id=4]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/environment/layers/back.png" type="Texture" id=6]
 [ext_resource path="res://Assets/environment/layers/middle.png" type="Texture" id=7]
+[ext_resource path="res://testes/Grass.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -57,25 +55,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
 
-[node name="World" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-format = 1
-
-[node name="Objects" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-
-[node name="Pickups" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-
-[node name="Danger" type="TileMap" parent="."]
-tile_set = ExtResource( 4 )
-cell_size = Vector2( 16, 16 )
-format = 1
+[node name="grass" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 visible = false

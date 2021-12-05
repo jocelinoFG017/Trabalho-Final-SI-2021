@@ -27,7 +27,9 @@ func get_input():
 	
 	if state in [IDLE,RUN] and !is_on_floor():
 		change_state(JUMP)
+
 	if state == JUMP and is_on_floor():
 		change_state(IDLE)
+		
 	if state == JUMP and velocity.y > 0:
 		new_anim = 'jump_down'

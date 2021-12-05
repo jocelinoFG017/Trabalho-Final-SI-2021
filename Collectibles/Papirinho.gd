@@ -1,4 +1,5 @@
 extends Area2D
+#  File notes Script
 
 signal pickup 
 

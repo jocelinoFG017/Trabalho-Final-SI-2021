@@ -1,19 +1,19 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/map/mapaRS.png" type="Texture" id=1]
-[ext_resource path="res://Assets/map/map-UNAldeia.png" type="Texture" id=2]
+[ext_resource path="res://Transitions/Mapa.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Face/face.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": false,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( 0.0217438, -0.206665 )
+a = Vector2( 0.881027, 0.410019 )
 b = Vector2( 91.6537, 172.264 )
 
 [sub_resource type="SegmentShape2D" id=3]
@@ -33,16 +33,15 @@ a = Vector2( 0.0217438, -0.206665 )
 b = Vector2( 82.4401, 16.0635 )
 
 [sub_resource type="SegmentShape2D" id=7]
-a = Vector2( 0.0217438, -0.206665 )
+a = Vector2( 61.8309, 18.4991 )
 b = Vector2( 30.1472, -65.8056 )
 
 [node name="Mapa" type="Node"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 4.90688, -0.844696 )
 frames = SubResource( 1 )
-frame = 1
-playing = true
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( -238.8, -124.591 )
@@ -81,3 +80,15 @@ shape = SubResource( 6 )
 position = Vector2( -140.078, -84.0848 )
 rotation = 3.02246
 shape = SubResource( 7 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = -277.05
+margin_top = -104.439
+margin_right = -220.05
+margin_bottom = -84.4388
+mouse_default_cursor_shape = 2
+text = "Aldeia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

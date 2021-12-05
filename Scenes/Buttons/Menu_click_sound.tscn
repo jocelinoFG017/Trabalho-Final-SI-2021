@@ -4,3 +4,4 @@
 
 [node name="menuSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
+bus = "SFX"

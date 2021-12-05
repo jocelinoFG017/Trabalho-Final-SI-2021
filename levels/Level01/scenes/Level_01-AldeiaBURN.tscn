@@ -98,74 +98,76 @@ texture = ExtResource( 3 )
 position = Vector2( 36.7085, 213.509 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="fire2" type="AnimatedSprite" parent="Fire" index="1"]
 position = Vector2( 119.115, 210.512 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="fire3" type="AnimatedSprite" parent="Fire" index="2"]
 position = Vector2( 362.911, 216.196 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="fire4" type="AnimatedSprite" parent="Fire" index="3"]
 position = Vector2( 340.116, 130.353 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="fire5" type="AnimatedSprite" parent="Fire" index="4"]
 position = Vector2( 432.769, 131.244 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="fire6" type="AnimatedSprite" parent="Fire" index="5"]
 position = Vector2( 609.961, 145.514 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="fire7" type="AnimatedSprite" parent="Fire" index="6"]
 position = Vector2( 560.014, 202.596 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="fire8" type="AnimatedSprite" parent="Fire" index="7"]
 position = Vector2( 541.305, 75.1975 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="fire9" type="AnimatedSprite" parent="Fire" index="8"]
 position = Vector2( 165.643, 125.223 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="fire10" type="AnimatedSprite" parent="Fire" index="9"]
 position = Vector2( 84.4703, 123.335 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="fire11" type="AnimatedSprite" parent="Fire" index="10"]
 position = Vector2( 79.7135, 155.444 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="World" parent="." index="3"]
@@ -192,19 +194,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" parent="." index="8"]
-position = Vector2( 958.105, 334.572 )
-
 [node name="NextLevel2" parent="." index="9" instance=ExtResource( 4 )]
 position = Vector2( 81.1966, 208.602 )
 cenas = "res://levels/Level_0101.tscn"
 
 [node name="NextLevel" parent="." index="10" instance=ExtResource( 4 )]
 position = Vector2( 18.9291, 98.6975 )
-cenas = "res://Transitions/All/Transition02.tscn"
+cenas = "res://Transitions/Mapa.tscn"
 
-[node name="PlayerSpawn" parent="." index="11"]
-position = Vector2( 703.385, 175.563 )
+[node name="Player" parent="." index="11"]
+position = Vector2( 958.105, 334.572 )
+jump_speed = 300
 
 [node name="placas" type="Node" parent="." index="12"]
+
+[node name="PlayerSpawn" parent="." index="13"]
+position = Vector2( 703.385, 175.563 )
 [connection signal="placa_ativada" from="placa" to="." method="_on_placa_placa_ativada"]

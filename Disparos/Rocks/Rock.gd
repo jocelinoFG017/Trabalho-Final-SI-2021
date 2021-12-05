@@ -20,4 +20,3 @@ func _on_pedra_body_entered(body):
 	if body.collision_layer == 4 and is_in_group("Atiraveis"):
 		body.take_damage()
 		print("colidindo no javali")
-
